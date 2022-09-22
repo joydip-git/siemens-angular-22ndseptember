@@ -5,6 +5,16 @@
 
 2. application development
 	a. modular code
+		i. what is module in JS
+		ii. module formats:
+			A. common js
+			B. ES6 
+			C. AMD
+			D. UMD
+			.....
+		iii. module loader:
+			require js
+			systemjs
 	b. transpilation
 	c. packing/bundling
 	d. linters
