@@ -11,4 +11,25 @@
 
 3. Angular 
 
+task:
+create an application which helps you to create some employee instances and calculate their salary
 
+a. there are two types of employees:
+	i. Developer
+	ii. Hr
+	common properties: 
+		value:
+			name, id, basic, da, hra
+		functional:
+			calculateSalary
+				arguments: NA
+				return: number (calculated salary)
+
+	Developer extra property: incenive
+	HR extra property: gratuity
+
+b. create some sample instances
+		accept the data using "prompt" method of window object
+c. add them in the array and then iterate through tp rint the calculated salary
+d. filter those employees which have salary more than 10000
+e. print them (in console)
