@@ -1,17 +1,35 @@
-var numbers = [1, 4, 2, 5, 3, 7, 0, 8, 6, 9]
-var evenLogic = function (num) {
-    return num % 2 === 0 ? true : false
+// function person(nameValue, idValue, salaryValue) {
+//     this.name = nameValue
+//     this.id = idValue
+//     this.salary = salaryValue
+// }
+// person.prototype.print = function () {
+//     return this.name + ' ' + this.id + ' ' + this.salary
+// }
+
+class Person {
+    constructor(nameValue, idValue, salaryValue) {
+        this.name = nameValue
+        this.id = idValue
+        this.salary = salaryValue
+    }
+    print() {
+        return this.name + ' ' + this.id + ' ' + this.salary
+    }
 }
 
-var res = numbers.filter(evenLogic)
-res.sort(
-    function (a, b) {
-        return a - b
+class Trainer extends Person {
+    constructor(nameValue, idValue, salaryValue, subjectValue) {
+        super(nameValue, idValue, salaryValue)
+        this.subject = subjectValue
     }
-)
-res.forEach(
-    function (num) {
-        console.log(num)
+    print() {
+        var partial = super.print()
+        return partial + ' ' + this.subject
     }
-)
-
+}
+console.log(Person.prototype)
+var anilperson = new Trainer('anil', 1, 1000, 'JS')
+var sunilperson = new Trainer('sunil', 2, 2000, 'Java')
+console.log(anilperson.print())
+console.log(sunilperson.print())
