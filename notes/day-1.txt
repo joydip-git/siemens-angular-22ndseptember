@@ -1,0 +1,12 @@
+1. JS and TS
+	a. basics
+	b. core features
+	c. new features
+
+2. application development
+	a. modular code
+	b. transpilation
+	c. packing/bundling
+	d. linters
+
+3. Angular 
