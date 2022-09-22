@@ -30,6 +30,22 @@ a. there are two types of employees:
 
 b. create some sample instances
 		accept the data using "prompt" method of window object
-c. add them in the array and then iterate through tp rint the calculated salary
+c. add them in the array and then iterate through the array to print the calculated salary
 d. filter those employees which have salary more than 10000
 e. print them (in console)
+
+
+
+https://github.com/joydip-git/siemens-angular-22ndseptember
+
+
+
+
+
+
+
+
+
+
+
+
