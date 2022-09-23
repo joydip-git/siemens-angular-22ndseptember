@@ -1,3 +1,13 @@
-<p>
-  Welcome to Angular
+<p style="background-color: beige;" [style.width.px]="width">
+  {{title}}
 </p>
+<button (click)="changeTitle('welcome to components')">Change Title</button>
+
+<br />
+<br>
+
+<ul>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ul>

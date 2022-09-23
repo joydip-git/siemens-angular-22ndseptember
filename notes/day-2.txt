@@ -1,5 +1,18 @@
 3rd party packages installed using NPM, bower, yaran etc.
 C:\Users\joydip\AppData\Roaming\npm
-
 node js and NPM:
 C:\Program Files\nodejs
+
+
+angular
+=> data binding: way to pass data from code to view
+	a. interpolation {{ prop-name }}
+	b. property binding <e [attr]="prop-name">
+=> event binding: way to pass data from view to code
+	<e (event-name)="method()">
+
+
+directives:
+	a. structural(*): decides the structure of the component template (Design) 
+	b. attribute: ngClass, ngStyle
+	c. component(@component/<app-tag-name>): with design

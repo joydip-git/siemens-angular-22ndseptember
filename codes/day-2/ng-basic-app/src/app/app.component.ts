@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-basic-app';
+  width = 400
+  title = 'Welcome to Angular';
+  names = ["anil", "sunil", "mahesh"]
+  changeTitle(arg: string) {
+    this.title = arg
+
+    // for (let name of this.names) {
+    //   const li = document.createElement('li')
+    //   li.innerText = name
+    // }
+  }
 }
