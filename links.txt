@@ -1,0 +1,15 @@
+javascript execution:
+https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c
+
+https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/#:~:text=The%20Execution%20Context%20contains%20the,and%20the%20code%20gets%20executed.
+
+https://blog.bitsrc.io/understanding-execution-context-and-execution-stack-in-javascript-1c9ea8642dd0
+
+JavaScript:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Angular tutorial:
+https://angular-training-guide.rangle.io/
+
+udemy.com:
+https://www.udemy.com/course/the-complete-guide-to-angular-2/
