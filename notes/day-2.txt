@@ -13,6 +13,28 @@ angular
 
 
 directives:
-	a. structural(*): decides the structure of the component template (Design) 
+	a. structural(*): decides the structure of the component template (Design) *ngFor (
 	b. attribute: ngClass, ngStyle
 	c. component(@component/<app-tag-name>): with design
+
+app
+	products (folder)
+		products.module.ts
+		components (folder)
+			products-list (folder)
+				products-list.component.ts
+				products-list.component.html
+				products-list.component.css
+			product-detail
+				product-detail.component.ts
+				.....
+		pipes (folder)
+
+		directives (folder)
+
+		services (folder)
+
+app.module.ts
+
+
+
