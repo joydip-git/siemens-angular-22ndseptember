@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiResponseModel } from 'src/models/api-respnose.model';
 import { Product } from 'src/models/product.model';
@@ -14,15 +14,40 @@ export class ProductsListComponent implements OnInit, OnChanges {
 
   products?: Product[] | null;
   loading = true
+  searchText = ''
   erroMessage?= ''
-  filterText = 'l'
   // private ps: ProductsService;
 
   constructor(private ps: ProductsService) {
     console.log('[PL] component created')
   }
-  updateFilterText(updatedValue: string) {
-    this.filterText = updatedValue
+  updateStarRating(newRating: number, id: number) {
+    if (this.products) {
+      const found = this.products.find(
+        (p: Product) => {
+          return p.productId === id
+        }
+      )
+      if (found) {
+        found.starRating = newRating
+        this.ps.updateRecord(found).subscribe({
+          next: (resp: ApiResponseModel<Product[]>) => {
+            this.products = resp.data
+            this.erroMessage = ''
+            this.loading = false
+          },
+          error: (err) => {
+            this.products = undefined
+            this.erroMessage = err.message
+            this.loading = false
+          }
+        })
+      }
+    }
+  }
+  updateSearchText(updatedSearchText: string) {
+    console.log(updatedSearchText)
+    this.searchText = updatedSearchText
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log('[PL] component changes happened')
