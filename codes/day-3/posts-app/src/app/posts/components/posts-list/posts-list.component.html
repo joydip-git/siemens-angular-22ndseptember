@@ -1,0 +1,39 @@
+<h2>Posts List</h2>
+<ng-template #loadingTemplate>
+    <span>Loading...please wait</span>
+</ng-template>
+<ng-template #errorTemplate>
+    <span>{{errorMessage}}</span>
+</ng-template>
+<ng-template #alternate>
+    <span>No posts found</span>
+</ng-template>
+<div *ngIf="!loading;else loadingTemplate">
+    <div *ngIf="errorMessage === '';else errorTemplate">
+        <!-- <table *ngIf="posts && posts.length>0;else alternate">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of posts">
+                    <td>
+                        {{p.title}}
+                    </td>
+                    <td>
+                        {{p.body}}
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+        <ol *ngIf="posts && posts.length>0;else alternate">
+            <li *ngFor="let p of posts" (click)="fetchPost(p.id)">{{p.title}}</li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <app-post-detail [selectedPost]="post"></app-post-detail>
+    </div>
+</div>
