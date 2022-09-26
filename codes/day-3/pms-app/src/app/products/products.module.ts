@@ -1,13 +1,15 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { FilterProductPipe } from "./pipes/filter-product.pipe";
 import { ProductsService } from "./services/products.service";
 
 @NgModule({
   declarations: [
-    ProductsListComponent
+    ProductsListComponent, FilterProductPipe
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   providers: [ProductsService],
   bootstrap: [],
   exports: [ProductsListComponent]

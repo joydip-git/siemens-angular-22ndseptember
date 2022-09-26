@@ -1,22 +1,37 @@
-<div class="table-responsive">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let p of products">
-                <td>
-                    <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle" />
-                </td>
-                <td>{{p.productName}}</td>
-                <td>{{p.price}}</td>
-                <td>{{p.starRating}}</td>
-            </tr>
-        </tbody>
-    </table>
+<ng-template #loadingTemplate>
+    <span>loding...plaese wait</span>
+</ng-template>
+<ng-template #errorTamplate>
+    <span>{{erroMessage}}</span>
+</ng-template>
+<div class="container" *ngIf="!loading;else loadingTemplate">
+    <div class="table-responsive" *ngIf="products && products !==null;else errorTamplate">
+        <div class="d-flex">
+            Filter By:&nbsp; <input class="form-control me-sm-2" type="text" placeholder="Search" [value]="filterText"
+                (change)="updateFilterText(filter.value)" #filter>
+        </div>
+        <br />
+        <table class="table table-hover" *ngIf="products.length>0">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of (products|productfilter:filterText)">
+                    <td>
+                        <img [src]="p.imageUrl" alt="NA" [title]="p.productName" class="imgStyle" />
+                    </td>
+                    <td>{{p.productName|uppercase}}</td>
+                    <td>{{p.productCode|lowercase}}</td>
+                    <td>{{p.price|currency:'USD'}}</td>
+                    <td>{{p.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

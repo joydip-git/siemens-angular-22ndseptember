@@ -38,6 +38,29 @@ HttpClient [bulit-in service class, HttpClientModule]
 You have to ask Angular DI framework to inject an instance of HttpClient class in your service class
 
 
+component lifecycle events:
+	creation: 
+		method: constructor
+		event: change, init
+
+	update:
+		change
+
+	destruction:
+		destroy
+
+component lifecycle event related interfaces:
+	X(event) => OnX(interface) => ngOnX(method in the interface)
+	Change	 => OnChange       => ngOnChange
+	Init	 => OnInit         => ngOnInit
+	Destroy  => OnDestroy      => ngOnDestroy
+	........................................
+
+export interface Calculation{
+	add(a:number, b:number):number;
+}
+
+
 
 
 

@@ -1,4 +1,4 @@
 export interface ApiResponseModel<T> {
     message: string | undefined;
-    data: T[] | T | null | undefined
+    data: T | null | undefined
 }
