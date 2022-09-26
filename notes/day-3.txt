@@ -1,0 +1,49 @@
+1. get all records: (GET)
+	http://127.0.0.1:3003/products
+	input: NA
+
+2. get single record (GET)
+	http://127.0.0.1:3003/products/<product-id>
+	input: a product id as route data
+
+3. delete a single record (DELETE)
+	http://127.0.0.1:3003/products/<product-id>
+	input: a product id as route data
+
+4. add a new record: (POST)
+	http://127.0.0.1:3003/products
+	input:  a product object through request body
+
+5. update an exitsing record: (PUT)
+	http://127.0.0.1:3003/products/<product-id>
+	input:  a product object through request body
+		a product id as route data
+
+
+HTTP requsts from Angular Application:
+
+$.ajax({
+	url:'http://127.0.0.1:3003/products/{id}',
+	type:'GET/PUT/POST/DELETE'
+})
+
+HttpClient [bulit-in service class, HttpClientModule]
+	- get('http://127.0.0.1:3003/products/') => Observable<object> => Observable<{message:'', data:[]}>
+	- get('http://127.0.0.1:3003/products/1') => Observable<object> =>Observable<{message:'', data:{}}>
+	- post('http://127.0.0.1:3003/products/',{product-object}) => Observable<object> =>Observable<{message:'', data:[]}>
+	- put('http://127.0.0.1:3003/products/1',{product-object}) => Observable<object> =>Observable<{message:'', data:[]}>
+	- delete('http://127.0.0.1:3003/products/1') => Observable<object> =>Observable<{message:'', data:[]}>
+	etc.
+
+You have to ask Angular DI framework to inject an instance of HttpClient class in your service class
+
+
+
+
+
+	
+
+
+
+
+
